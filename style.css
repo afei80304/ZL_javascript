@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 微軟正黑體;
+}
+
+#box{
+    background-color: #1809a0;
+    width: 500px;
+    height: 700px;
+    margin:200px auto 0;
+    color:#f8fc5f;
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+    align-items: center;
+    justify-items: center;
+
+    border-radius: 10px;
+    box-shadow:0 10px 20px rgba(0, 0, 0, 0.6);
+}
+#box div{
+    font-size: 25px;
+    cursor: pointer;
+    padding:30px;
+}
+#result{
+    grid-column: 1 / 5;
+    padding: 50px;
+}
+ 
