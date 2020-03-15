@@ -10,10 +10,27 @@ var equalBtn = document.getElementById("equal");
 // 監聽器(""，等於)
 equalBtn.addEventListener("click", equal);
 
+//清除按鈕
+var clearBtn = document.getElementById("clear");
+//監聽器
+clearBtn.addEventListener("click", clear);
+
+function clear() {
+    //將數字清零
+    final = "";
+    result.innerHTML = "0";
+}
+
+
+
+
 function equal() {
     // 處理尚未輸入的數字
     if (final == "") return;
-       
+    
+    var last = final[final.length - 1];
+    if(last == "+" || last == "-" || last == "*" || last == "/")
+        return;
 
     result.innerHTML = eval(final);
     final = "";
@@ -39,8 +56,10 @@ function show(content) {
     }
     //取得最後一個字
     var last = final[final.length - 1];
-    console.log(final[-2]);
 
+    if(last == "+" || last == "-" || last == "*" || last == '/')
+        if(content == "+" || content == "-" || content == "*" || content == "/")
+            return;
     final += content;
     // 結果元素.內容 = 最終數字
     result.innerHTML = final;
